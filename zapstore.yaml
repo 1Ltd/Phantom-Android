@@ -1,7 +1,0 @@
-repository: https://github.com/ArcaneChat/android
-assets:
-  - build/outputs/apk/foss/release/.*.apk
-  - .*.apk
-remote_metadata:
-  - fdroid
-  - github
