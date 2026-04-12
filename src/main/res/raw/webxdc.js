@@ -191,19 +191,13 @@ window.webxdc = (() => {
         if (el._arcaneMediaListened) return;
         el._arcaneMediaListened = true;
         el.addEventListener('play', function() {
-          if (typeof InternalJSApi !== 'undefined' && InternalJSApi.notifyAudioStarted) {
-            InternalJSApi.notifyAudioStarted(document.title || '');
-          }
+          if (window.InternalJSApi) InternalJSApi.notifyAudioStarted(document.title || '');
         });
         el.addEventListener('pause', function() {
-          if (typeof InternalJSApi !== 'undefined' && InternalJSApi.notifyAudioPaused) {
-            InternalJSApi.notifyAudioPaused();
-          }
+          if (window.InternalJSApi) InternalJSApi.notifyAudioPaused();
         });
         el.addEventListener('ended', function() {
-          if (typeof InternalJSApi !== 'undefined' && InternalJSApi.notifyAudioStopped) {
-            InternalJSApi.notifyAudioStopped();
-          }
+          if (window.InternalJSApi) InternalJSApi.notifyAudioStopped();
         });
       })(elements[i]);
     }

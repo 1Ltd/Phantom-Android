@@ -92,6 +92,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
   private TextToSpeech tts;
 
   private boolean isAudioPlaying = false;
+  private String currentAudioTitle = "";
   private @Nullable MediaController webxdcMediaController;
   private @Nullable ListenableFuture<MediaController> webxdcMediaControllerFuture;
   private @Nullable BroadcastReceiver notificationControlReceiver;
@@ -824,6 +825,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
           () -> {
             if (webxdcMediaController == null) return;
             isAudioPlaying = true;
+            currentAudioTitle = title;
             Bundle args = new Bundle();
             args.putString("title", title);
             args.putString(
@@ -846,6 +848,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
           () -> {
             if (webxdcMediaController == null) return;
             isAudioPlaying = false;
+            currentAudioTitle = "";
             webxdcMediaController.sendCustomCommand(
                 new SessionCommand(WebxdcMediaSessionService.COMMAND_AUDIO_STOPPED, new Bundle()),
                 Bundle.EMPTY);
@@ -877,7 +880,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
             if (webxdcMediaController == null) return;
             isAudioPlaying = true;
             Bundle args = new Bundle();
-            args.putString("title", "");
+            args.putString("title", currentAudioTitle);
             args.putString(
                 "artist",
                 WebxdcActivity.this.dcAppMsg.getWebxdcInfo().optString("name", ""));

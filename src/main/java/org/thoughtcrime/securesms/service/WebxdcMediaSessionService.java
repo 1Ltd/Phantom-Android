@@ -268,13 +268,12 @@ public class WebxdcMediaSessionService extends MediaSessionService {
   // -------------------------------------------------------------------------
 
   private void handleAudioStarted(Bundle args) {
-    if (args == null) args = Bundle.EMPTY;
     String title = args.getString("title", "");
     String artist = args.getString("artist", "");
-    int msgId = args.getInt("msg_id", 0);
-    int accountId = args.getInt("account_id", 0);
 
-    if (msgId != 0) {
+    if (args.containsKey("msg_id")) {
+      int msgId = args.getInt("msg_id");
+      int accountId = args.getInt("account_id", 0);
       updateSessionActivity(accountId, msgId);
     }
     if (stubPlayer != null) {
