@@ -198,10 +198,6 @@ public class Prefs {
     return true;
   }
 
-  public static boolean isCallsEnabled(Context context) {
-    return true;
-  }
-
   // ringtone
 
   public static @NonNull Uri getNotificationRingtone(Context context) {
