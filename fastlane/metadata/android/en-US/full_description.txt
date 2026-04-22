@@ -25,7 +25,7 @@ ArcaneChat is a Delta Chat client and was created with a focus on usability, goo
 <li>Multiple color themes/skins</li>
 <li>It is possible to disable profiles to completely disconnect them saving data/bandwidth</li>
 <li>You can easily see the connection status of all your profiles in the profile switcher</li>
-<li>Extra option to share location for 12 hours</li>
+<li>Extra option to share location for 24 hours</li>
 <li>Clicking on a message with a POI location, will open the POI on the map</li>
 <li>Last-seen status of contacts is shown in your contact list, like in WhatsApp, Telegram, etc.</li>
 <li>Videos are played in loop, useful for short GIF videos</li>

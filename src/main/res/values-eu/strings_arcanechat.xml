@@ -2,15 +2,13 @@
 <resources
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <string name="description">Deskribapena</string>
-    <string name="could_not_open_file">Ezin izan da fitxategia ireki</string>
     <string name="menu_export_image">Esportatu irudia</string>
     <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
     <string name="or_separator">edo</string>
     <string name="online">online</string>
     <string name="pink">Arrosa</string>
     <string name="gray">Grisa</string>
-    <string name="share_location_for_12_hours">12 orduz</string>
+    <string name="share_location_for_24_hours">24 orduz</string>
 
     <!-- device messages for updates -->
     <!-- when translating the sentence about the ArcaneChat channel, clarify that the channel is in English -->

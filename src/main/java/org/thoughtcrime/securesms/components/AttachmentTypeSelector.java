@@ -26,6 +26,7 @@ import androidx.loader.app.LoaderManager;
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.permissions.Permissions;
+import org.thoughtcrime.securesms.util.Prefs;
 import org.thoughtcrime.securesms.util.ViewUtil;
 
 public class AttachmentTypeSelector extends PopupWindow {
@@ -45,7 +46,7 @@ public class AttachmentTypeSelector extends PopupWindow {
   private final @NonNull ImageView imageButton;
   private final @NonNull ImageView documentButton;
   private final @NonNull ImageView contactButton;
-  // private final @NonNull ImageView           cameraButton;
+  // private final @NonNull ImageView cameraButton;
   private final @NonNull ImageView videoButton;
   private final @NonNull ImageView locationButton;
   private final @NonNull ImageView webxdcButton;
@@ -87,11 +88,9 @@ public class AttachmentTypeSelector extends PopupWindow {
     this.webxdcButton.setOnClickListener(new PropagatingClickListener(ADD_WEBXDC));
     this.recentRail.setListener(new RecentPhotoSelectedListener());
 
-    // disable location streaming button for now
-    // if (!Prefs.isLocationStreamingEnabled(context)) {
-    this.locationButton.setVisibility(View.GONE);
-    ViewUtil.findById(layout, R.id.location_button_label).setVisibility(View.GONE);
-    // }
+    if (!Prefs.isLocationStreamingEnabled(context)) {
+      ViewUtil.findById(layout, R.id.location_linear_layout).setVisibility(View.GONE);
+    }
 
     setLocationButtonImage(context);
 

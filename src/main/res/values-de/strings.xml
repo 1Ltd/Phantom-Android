@@ -377,7 +377,6 @@
     <string name="share_location_for_one_hour">für 1 Stunde</string>
     <string name="share_location_for_two_hours">für 2 Stunden</string>
     <string name="share_location_for_six_hours">für 6 Stunden</string>
-    <string name="share_location_for_12_hours">für 12 Stunden</string>
 
     <plurals name="ask_send_following_n_files_to">
         <item quantity="one">Die folgende Datei an %s senden?</item>

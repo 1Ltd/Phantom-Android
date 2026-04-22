@@ -69,6 +69,7 @@ import org.thoughtcrime.securesms.components.SearchToolbar;
 import org.thoughtcrime.securesms.connect.AccountManager;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.connect.DirectShareUtil;
+import org.thoughtcrime.securesms.geolocation.LocationStreamingService;
 import org.thoughtcrime.securesms.mms.GlideApp;
 import org.thoughtcrime.securesms.permissions.Permissions;
 import org.thoughtcrime.securesms.providers.PersistentBlobProvider;
@@ -449,6 +450,9 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     refreshTitle();
     invalidateOptionsMenu();
     DirectShareUtil.triggerRefreshDirectShare(this);
+    if (DcHelper.getContext(this).isSendingLocationsToChat(0)) {
+      LocationStreamingService.ensureRunning(this);
+    }
   }
 
   @Override

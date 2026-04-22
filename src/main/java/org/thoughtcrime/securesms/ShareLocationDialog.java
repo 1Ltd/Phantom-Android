@@ -33,7 +33,7 @@ public class ShareLocationDialog {
               shareLocationUnit = 6 * 60 * 60;
               break;
             case 5:
-              shareLocationUnit = 12 * 60 * 60;
+              shareLocationUnit = 24 * 60 * 60;
               break;
           }
 

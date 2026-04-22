@@ -1393,6 +1393,7 @@ JNIEXPORT jint Java_com_b44t_messenger_DcMsg_getId(JNIEnv *env, jobject obj)
     return dc_msg_get_id(get_dc_msg(env, obj));
 }
 
+
 JNIEXPORT jstring Java_com_b44t_messenger_DcMsg_getText(JNIEnv *env, jobject obj)
 {
     char* temp = dc_msg_get_text(get_dc_msg(env, obj));
